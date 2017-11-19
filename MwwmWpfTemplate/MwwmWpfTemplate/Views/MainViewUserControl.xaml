@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="MwwmWpfTemplate.Views.MainViewUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="768"
+             d:DesignWidth="1024">
+    <DockPanel Name="MainViewPanel" LastChildFill="True">
+        <StackPanel DockPanel.Dock="Top" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Label Content="Client area of MainView" FontSize="18" HorizontalAlignment="Center"/>
+            <Button Content="Click for FeatureView" Command="{Binding FeatureViewCommand}" Margin="0,10,0,0" HorizontalAlignment="Center"/>
+        </StackPanel>
+    </DockPanel>
+</UserControl>

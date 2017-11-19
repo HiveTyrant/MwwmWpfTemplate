@@ -1,0 +1,29 @@
+﻿<Window x:Class="MwwmWpfTemplate.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:p="clr-namespace:MwwmWpfTemplate.Properties"
+        Closing="WindowClosing"
+        mc:Ignorable="d"
+        WindowState="Normal"
+        Icon="../Resources/text_code_csharp.ico"
+        x:Name="MainWindowFrame"
+        Title="{Binding Path=Title}"
+        ResizeMode="CanResizeWithGrip" 
+        WindowStartupLocation="CenterScreen"
+        >
+    <DockPanel x:Name="MainWindowPanel" LastChildFill="True">
+        <DockPanel x:Name="TopPanel" DockPanel.Dock="Top" LastChildFill="True">
+            <Button FontSize="20" Content="Luk" DockPanel.Dock="Left" VerticalAlignment="Bottom" Width="75" Height="35" Command="{Binding MenuCloseCommand}" />
+            <Image DockPanel.Dock="Left" Name="LogoImage" HorizontalAlignment="Right" Cursor="Hand" ToolTip="About" Source="/MwwmWpfTemplate;component/Resources/MvvmWpfTemplate.gif" Stretch="None">
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick" Command="{Binding  MenuAboutCommand, Mode=OneTime}" />
+                </Image.InputBindings>
+            </Image>
+        </DockPanel>
+        <DockPanel x:Name="ContentPanel" DockPanel.Dock="Bottom" LastChildFill="True">
+            <ContentControl Content="{Binding Path=CurrentControl}" DockPanel.Dock="Top"/>
+        </DockPanel>
+    </DockPanel>
+</Window>
